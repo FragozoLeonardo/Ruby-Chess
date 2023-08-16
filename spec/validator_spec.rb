@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # validator_spec.rb
 require 'validator'
 

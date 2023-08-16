@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require_relative 'piece'
+
 class Pawn < Piece
+  attr_accessor :first_move
+
   def initialize(color, validator)
     super(color)
     @validator = validator

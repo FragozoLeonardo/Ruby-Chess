@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # validator.rb
 class Validator
   def valid_advance?(color, start, destination, first_move)
@@ -20,13 +22,9 @@ class Validator
 
   def valid_capture?(color, start, destination)
     if color == 'white'
-      if destination[0] - start[0] == 1 && (destination[1] - start[1]).abs == 1
-        return true
-      end
+      return true if destination[0] - start[0] == 1 && (destination[1] - start[1]).abs == 1
     elsif color == 'black'
-      if start[0] - destination[0] == 1 && (destination[1] - start[1]).abs == 1
-        return true
-      end
+      return true if start[0] - destination[0] == 1 && (destination[1] - start[1]).abs == 1
     end
 
     false
