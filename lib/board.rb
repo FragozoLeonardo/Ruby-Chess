@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Board
   def initialize
     @grid = Array.new(8) { Array.new(8) }
