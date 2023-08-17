@@ -34,6 +34,13 @@ class Validator
     false
   end
 
+  def valid_knight_move?(start, destination)
+    x_diff = (start[0] - destination[0]).abs
+    y_diff = (start[1] - destination[1]).abs
+
+    (x_diff == 2 && y_diff == 1) || (x_diff == 1 && y_diff == 2)
+  end
+
   private
 
   def valid_white_advance?(row_diff, col_diff, first_move)
