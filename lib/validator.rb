@@ -15,11 +15,11 @@ class Validator
     false
   end
 
-  def valid_capture?(color, start, destination)
+  def valid_capture?(_color, start, destination)
     row_diff = (destination[0] - start[0]).abs
     col_diff = (destination[1] - start[1]).abs
 
-    return row_diff == 1 && col_diff == 1
+    row_diff == 1 && col_diff == 1
   end
 
   def valid_rook_move?(start, destination)
@@ -28,16 +28,24 @@ class Validator
     false
   end
 
+  def valid_bishop_move?(start, destination)
+    return true if diagonal_move?(start, destination)
+
+    false
+  end
+
   private
 
   def valid_white_advance?(row_diff, col_diff, first_move)
-    return true if first_move && row_diff == 2 && col_diff == 0
-    return row_diff == 1 && col_diff == 0
+    return true if first_move && row_diff == 2 && col_diff.zero?
+
+    row_diff == 1 && col_diff.zero?
   end
 
   def valid_black_advance?(row_diff, col_diff, first_move)
-    return true if first_move && row_diff == 2 && col_diff == 0
-    return row_diff == 1 && col_diff == 0
+    return true if first_move && row_diff == 2 && col_diff.zero?
+
+    row_diff == 1 && col_diff.zero?
   end
 end
 
@@ -47,4 +55,8 @@ end
 
 def horizontal_move?(start, destination)
   start[0] == destination[0]
+end
+
+def diagonal_move?(start, destination)
+  (start[0] - destination[0]).abs == (start[1] - destination[1]).abs
 end

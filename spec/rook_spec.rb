@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # rook_spec.rb
 require 'rook'
 require 'validator'
