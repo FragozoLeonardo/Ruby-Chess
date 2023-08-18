@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # rook_spec.rb
-require 'rook'
-require 'validator'
+require './lib/rook'
+require './lib/validator'
 
 RSpec.describe Rook do
   let(:validator) { instance_double(Validator) }

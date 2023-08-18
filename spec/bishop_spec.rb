@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # bishop_spec.rb
-require 'bishop'
-require 'validator'
+require './lib/bishop'
+require './lib/validator'
 
 RSpec.describe Bishop do
   let(:validator) { instance_double(Validator) }

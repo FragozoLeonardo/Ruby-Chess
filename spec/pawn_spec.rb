@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'pawn'
-require 'validator'
+require './lib/pawn'
+require './lib/validator'
 
 RSpec.describe Pawn do
   let(:validator) { Validator.new }

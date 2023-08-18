@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # knight_spec.rb
-require 'knight'
-require 'validator'
+require './lib/knight'
+require './lib/validator'
 
 RSpec.describe Knight do
   let(:validator) { instance_double(Validator) }

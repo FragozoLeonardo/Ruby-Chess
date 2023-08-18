@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 # queen_spec.rb
-require 'queen'
-require 'validator'
+require './lib/queen'
+require './lib/validator'
 
 RSpec.describe Queen do
   let(:validator) { instance_double(Validator) }

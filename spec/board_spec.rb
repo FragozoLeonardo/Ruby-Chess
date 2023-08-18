@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # board_spec.rb
-require 'board'
+require './lib/board'
 
 RSpec.describe Board do
   let(:board) { Board.new }

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # piece_spec.rb
-require 'piece'
+require './lib/piece'
 
 RSpec.describe Piece do
   let(:white_piece) { Piece.new('white', "\u2654") }

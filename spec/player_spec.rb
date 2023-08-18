@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # player_spec.rb
-require 'player'
+require './lib/player'
 
 RSpec.describe Player do
   let(:player) { Player.new('Leo', 'white') }
