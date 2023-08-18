@@ -41,6 +41,17 @@ class Validator
     (x_diff == 2 && y_diff == 1) || (x_diff == 1 && y_diff == 2)
   end
 
+  def valid_king_move?(start, destination)
+    x_diff = (start[0] - destination[0]).abs
+    y_diff = (start[1] - destination[1]).abs
+
+    x_diff <= 1 && y_diff <= 1
+  end
+
+  def valid_queen_move?(start, destination)
+    valid_rook_move?(start, destination) || valid_bishop_move?(start, destination)
+  end
+
   private
 
   def valid_white_advance?(row_diff, col_diff, first_move)
