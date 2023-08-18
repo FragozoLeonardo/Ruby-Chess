@@ -90,12 +90,9 @@ class Game
   attr_reader :current_player
 end
 
-# Instantiate Player objects
 player1 = Player.new('Player 1', :white)
 player2 = Player.new('Player 2', :black)
 
-# Instantiate the Game class with the player objects
-game = Game.new(player1, player2)
+game = Game.new(player1, player2
 
-# Start the game loop
 game.start
