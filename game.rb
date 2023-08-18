@@ -93,6 +93,6 @@ end
 player1 = Player.new('Player 1', :white)
 player2 = Player.new('Player 2', :black)
 
-game = Game.new(player1, player2
+game = Game.new(player1, player2)
 
 game.start
