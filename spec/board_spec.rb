@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# board_spec.rb
 require 'board'
 
 RSpec.describe Board do

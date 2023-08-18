@@ -4,7 +4,7 @@ require_relative 'piece'
 
 class Queen < Piece
   def initialize(color, validator)
-    super(color)
+    super(color, color == 'white' ? "\u2655" : "\u265B")
     @validator = validator
   end
 

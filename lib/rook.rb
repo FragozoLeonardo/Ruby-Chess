@@ -4,7 +4,7 @@ require_relative 'piece'
 
 class Rook < Piece
   def initialize(color, validator)
-    super(color)
+    super(color, color == 'white' ? "\u2656" : "\u265C")
     @validator = validator
   end
 

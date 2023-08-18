@@ -4,7 +4,7 @@ require_relative 'piece'
 
 class Bishop < Piece
   def initialize(color, validator)
-    super(color)
+    super(color, color == 'white' ? "\u2657" : "\u265D")
     @validator = validator
   end
 

@@ -4,7 +4,7 @@ require_relative 'piece'
 
 class Knight < Piece
   def initialize(color, validator)
-    super(color)
+    super(color, color == 'white' ? "\u2658" : "\u265E")
     @validator = validator
   end
 

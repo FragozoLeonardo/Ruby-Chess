@@ -6,7 +6,7 @@ class Pawn < Piece
   attr_accessor :first_move
 
   def initialize(color, validator)
-    super(color)
+    super(color, color == 'white' ? "\u2659" : "\u265F")
     @validator = validator
     @first_move = true
   end
