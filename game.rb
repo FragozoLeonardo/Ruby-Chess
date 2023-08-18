@@ -4,8 +4,6 @@ require_relative 'lib/player'
 require_relative 'lib/board'
 require_relative 'lib/validator'
 
-
-
 # game.rb
 class Game
   def initialize(player1, player2)
@@ -94,8 +92,8 @@ class Game
 end
 
 # Instantiate Player objects
-player1 = Player.new("Player 1", :white)
-player2 = Player.new("Player 2", :black)
+player1 = Player.new('Player 1', :white)
+player2 = Player.new('Player 2', :black)
 
 # Instantiate the Game class with the player objects
 game = Game.new(player1, player2)
