@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# validator.rb
 class Validator
   def valid_advance?(color, start, destination, first_move)
     row_diff = (destination[0] - start[0]).abs

@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# king_spec.rb
 require './lib/king'
 require './lib/validator'
 

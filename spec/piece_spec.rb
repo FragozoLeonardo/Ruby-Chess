@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# piece_spec.rb
 require './lib/piece'
 
 RSpec.describe Piece do

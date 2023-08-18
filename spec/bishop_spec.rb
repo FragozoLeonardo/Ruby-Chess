@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# bishop_spec.rb
 require './lib/bishop'
 require './lib/validator'
 

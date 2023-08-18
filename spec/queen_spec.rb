@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# queen_spec.rb
 require './lib/queen'
 require './lib/validator'
 

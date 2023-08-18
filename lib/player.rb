@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# player.rb
 class Player
   attr_reader :name, :color
   attr_accessor :moves

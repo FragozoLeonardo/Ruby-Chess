@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# game_spec.rb
 require 'game'
 require 'board'
 require 'validator'

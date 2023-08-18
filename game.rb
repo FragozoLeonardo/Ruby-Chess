@@ -4,7 +4,6 @@ require_relative 'lib/player'
 require_relative 'lib/board'
 require_relative 'lib/validator'
 
-# game.rb
 class Game
   def initialize(player1, player2)
     @board = Board.new

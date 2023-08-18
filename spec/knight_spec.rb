@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# knight_spec.rb
 require './lib/knight'
 require './lib/validator'
 
