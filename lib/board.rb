@@ -6,11 +6,13 @@ require_relative 'knight'
 require_relative 'bishop'
 require_relative 'queen'
 require_relative 'king'
+
 class Board
   attr_reader :grid
 
   def initialize
     @grid = Array.new(8) { Array.new(8) }
+    setup_initial_pieces
   end
 
   def place_piece(piece, position)
@@ -21,14 +23,32 @@ class Board
     @grid[position[0]][position[1]]
   end
 
+  def move_piece(start, destination)
+    piece = get_piece(start)
+    return false unless piece
+
+    if piece.valid_move?(start, destination)
+      place_piece(piece, destination)
+      place_piece(nil, start)
+      piece.position = destination
+      true
+    else
+      false
+    end
+  end
+
   def display
-    @grid.each do |row|
+    puts '   a b c d e f g h'
+    puts '  -----------------'
+    @grid.each_with_index do |row, i|
+      print "#{8 - i} |"
       row.each do |piece|
         symbol = piece ? piece.symbol : ' '
-        print "#{symbol} "
+        print " #{symbol}"
       end
-      puts
+      puts ' |'
     end
+    puts '  -----------------'
   end
 
   def setup_initial_pieces
@@ -52,9 +72,28 @@ class Board
     @grid[7][6] = Knight.new('black', validator)
     @grid[7][7] = Rook.new('black', validator)
 
-    8.times do |col|
-      @grid[1][col] = Pawn.new('white', validator)
-      @grid[6][col] = Pawn.new('black', validator)
-    end
+    @grid[1][0] = Pawn.new('white', validator)
+    @grid[1][1] = Pawn.new('white', validator)
+    @grid[1][2] = Pawn.new('white', validator)
+    @grid[1][3] = Pawn.new('white', validator)
+    @grid[1][4] = Pawn.new('white', validator)
+    @grid[1][5] = Pawn.new('white', validator)
+    @grid[1][6] = Pawn.new('white', validator)
+    @grid[1][7] = Pawn.new('white', validator)
+
+    @grid[6][0] = Pawn.new('black', validator)
+    @grid[6][1] = Pawn.new('black', validator)
+    @grid[6][2] = Pawn.new('black', validator)
+    @grid[6][3] = Pawn.new('black', validator)
+    @grid[6][4] = Pawn.new('black', validator)
+    @grid[6][5] = Pawn.new('black', validator)
+    @grid[6][6] = Pawn.new('black', validator)
+    @grid[6][7] = Pawn.new('black', validator)
+  end
+
+  def update_board(start_position, destination_position)
+    piece = @grid[start_position[0]][start_position[1]]
+    @grid[start_position[0]][start_position[1]] = nil
+    @grid[destination_position[0]][destination_position[1]] = piece
   end
 end

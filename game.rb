@@ -3,6 +3,7 @@
 require_relative 'lib/player'
 require_relative 'lib/board'
 require_relative 'lib/validator'
+require_relative 'lib/move'
 
 class Game
   def initialize(player1, player2)
@@ -66,7 +67,7 @@ class Game
 
     return nil unless piece && piece.color == @current_player.color
 
-    Move.new(piece, start_position, destination_position)
+    Move.new(piece, @validator, start_position, destination_position)
   end
 
   def parse_position(input)
@@ -76,11 +77,12 @@ class Game
   end
 
   def valid_move?(move)
-    move.valid?
+    move.valid_move?
   end
 
   def execute_move(move)
-    move.execute
+    move.execute_move
+    @board.update_board(move.start_position, move.destination_position)
   end
 
   def switch_players
@@ -90,8 +92,8 @@ class Game
   attr_reader :current_player
 end
 
-player1 = Player.new('Player 1', :white)
-player2 = Player.new('Player 2', :black)
+player1 = Player.new('Player 1', 'white')
+player2 = Player.new('Player 2', 'black')
 
 game = Game.new(player1, player2)
 

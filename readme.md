@@ -3,4 +3,6 @@ Object-Oriented Programming (OOP), along with some SOLID principles that I learn
 
 Please show them your support whenever you can!
 
+You can run the game with "ruby game.rb" without the quotation marks.
+
 Enjoy! :)

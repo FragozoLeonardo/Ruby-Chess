@@ -6,7 +6,7 @@ class Player
 
   def initialize(name, color)
     @name = name
-    @color = color
+    @color = color.to_s
     @moves = []
   end
 
