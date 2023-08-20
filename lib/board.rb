@@ -38,17 +38,17 @@ class Board
   end
 
   def display
-    puts '   a b c d e f g h'
-    puts '  -----------------'
-    @grid.each_with_index do |row, i|
+    puts '     a    b    c    d    e    f    g    h'
+    puts '  +--------------------------------------+'
+    @grid.reverse_each.with_index do |row, i|
       print "#{8 - i} |"
       row.each do |piece|
-        symbol = piece ? piece.symbol : ' '
-        print " #{symbol}"
+        symbol = piece ? piece.symbol.center(4) : ' '.center(4)
+        print "#{symbol}|"
       end
-      puts ' |'
+      puts "\n  +--------------------------------------+"
     end
-    puts '  -----------------'
+    puts '     a    b    c    d    e    f    g    h'
   end
 
   def setup_initial_pieces
