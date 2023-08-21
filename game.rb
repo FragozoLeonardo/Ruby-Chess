@@ -14,7 +14,7 @@ class Game
   end
 
   def start
-    puts 'Welcome to Chess!'
+    puts 'Welcome to Berserker Chess!'
     @board.setup_initial_pieces
 
     loop do
