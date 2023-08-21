@@ -10,11 +10,22 @@ class Move
     @destination = destination
   end
 
-  def valid_move?(capture = false)
-    if capture
-      validator.valid_capture?(piece.color, start, destination)
+  def valid_move?(_capture = false)
+    case piece
+    when Pawn
+      validator.valid_pawn_move?(start, destination)
+    when Rook
+      validator.valid_rook_move?(start, destination)
+    when Bishop
+      validator.valid_bishop_move?(start, destination)
+    when Knight
+      validator.valid_knight_move?(start, destination)
+    when King
+      validator.valid_king_move?(start, destination)
+    when Queen
+      validator.valid_queen_move?(start, destination)
     else
-      validator.valid_advance?(piece.color, start, destination, piece.first_move)
+      raise 'Invalid piece type'
     end
   end
 
